@@ -23,7 +23,7 @@ class SelectTemperatureState implements State {
 			System.out.println(String.format("[%d]%s", i, TEMPERATURES[i]));
 		}
 		
-		System.out.println("[%d]Cancel order");
+		System.out.println(String.format("[%d]Cancel order", NUMBER_CANCEL));
 		
 		int selection = InputHelper.readInt();
 		

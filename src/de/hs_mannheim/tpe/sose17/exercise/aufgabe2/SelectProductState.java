@@ -6,8 +6,8 @@ class SelectProductState implements State {
 
 	private static final int NUMBER_CANCEL = -1;
 	
-	private static final String[] PRODUCTS = { "black tea", "coffee", "cappuccino"};
-	private static final float[] PRODUCT_COSTS = { 2f, 2.5f, 2.6f };
+	private static final String[] PRODUCTS = { "black tea", "green tea", "coffee", "cappuccino"};
+	private static final float[] PRODUCT_COSTS = { 2f, 2f, 2.5f, 2.6f };
 	
 	private final HashMap<String, Object> arguments;
 	
@@ -24,7 +24,7 @@ class SelectProductState implements State {
 			System.out.println(String.format("[%d]%s", i, PRODUCTS[i]));
 		}
 		
-		System.out.println("[%d]Cancel order");
+		System.out.println(String.format("[%d]Cancel order", NUMBER_CANCEL));
 		
 		int selection = InputHelper.readInt();
 		

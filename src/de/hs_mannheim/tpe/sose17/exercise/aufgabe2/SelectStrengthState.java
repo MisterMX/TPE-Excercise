@@ -23,7 +23,7 @@ class SelectStrengthState implements State {
 			System.out.println(String.format("[%d]%s", i, STRENGTHS[i]));
 		}
 		
-		System.out.println("[%d]Cancel order");
+		System.out.println(String.format("[%d]Cancel order", NUMBER_CANCEL));
 		
 		int selection = InputHelper.readInt();
 		
@@ -32,7 +32,7 @@ class SelectStrengthState implements State {
 			return null;
 		} else if (selection >= 0 && selection < STRENGTHS.length) {
 			arguments.put(ArgumentKeys.KEY_STRENGTH, STRENGTHS[selection]);
-			return new SelectStrengthState(arguments);
+			return new PaymentState(arguments);
 		} else {
 			System.err.println(String.format("Invalid number %d.", selection));
 			return this;
