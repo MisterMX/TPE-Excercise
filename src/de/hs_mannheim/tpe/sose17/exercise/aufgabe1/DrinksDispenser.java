@@ -26,13 +26,19 @@ public class DrinksDispenser {
 
 		//Create selected drink object
 		switch(i){
-			case 1 : currentDrink = new BlackTea(); break;
-			case 2 : currentDrink = new Cappuccino();break;
-			case 3 : currentDrink = new LatteMacciato(); break;
+			case 1:
+				currentDrink = new BlackTea();
+				break;
+			case 2:
+				currentDrink = new Cappuccino();
+				break;
+			case 3:
+				currentDrink = new LatteMacciato();
+				break;
 		}
 		
 		mustPay = currentDrink.getPrice();
-		System.out.println("You have choose " + currentDrink.getName());
+		System.out.println("You have chosen " + currentDrink.getName());
 		
 		chooseStrengthOfDrink();
 	}
@@ -43,7 +49,7 @@ public class DrinksDispenser {
 	private void chooseStrengthOfDrink(){
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("Select strength of your " +  currentDrink.getName());
-		System.out.println("1: strehgth");
+		System.out.println("1: strong");
 		System.out.println("2: weak");
 		System.out.println("Everything else : cancel");
 		
@@ -94,11 +100,11 @@ public class DrinksDispenser {
 	private void pay(){
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("Please add money to the dispenser");
-		System.out.println("A: 2€");
-		System.out.println("B: 1€");
-		System.out.println("C: 50ct");
-		System.out.println("D: 20ct");
-		System.out.println("E: 10ct");
+		System.out.println("A: 2 \u20ac");
+		System.out.println("B: 1 \u20ac");
+		System.out.println("C: 50 ct");
+		System.out.println("D: 20 ct");
+		System.out.println("E: 10 ct");
 		System.out.println("Everything else : cancel");
 		
 		while(hadPay < mustPay){
@@ -118,12 +124,12 @@ public class DrinksDispenser {
 				if(money == 2 || money == 1 || money == 0.5 | money == 0.2 || money == 0.1){
 					hadPay += money;
 					if(hadPay < mustPay ){
-						System.out.println("You must pay " + (mustPay - hadPay) + "€ anymore");
-						System.out.println("Had pay: " + hadPay);
+						System.out.println("Still need to pay " + (mustPay - hadPay) + "\u20ac.");
+						System.out.println("Paid: " + hadPay);
 					}
 				}
 				else{
-					System.out.println("The dispenser don't now the coint " + money);
+					System.out.println(money + " is not a valid payment method.");
 				}
 			}
 			else{
@@ -137,11 +143,15 @@ public class DrinksDispenser {
 			System.out.println("Here is your drink!");
 			System.out.print("A ");
 			
-			if(coldDrink) System.out.print("cold ");
-			else System.out.print("hot ");
+			if(coldDrink)
+				System.out.print("cold ");
+			else
+				System.out.print("hot ");
 			
-			if(weakDrink) System.out.print("weak ");
-			else System.out.print("strength ");
+			if(weakDrink)
+				System.out.print("weak ");
+			else
+				System.out.print("strength ");
 			
 			System.out.println(currentDrink.getName());
 			
@@ -163,11 +173,11 @@ public class DrinksDispenser {
 		System.out.println("You get back:");
 		while(hadPay > 0){
 			if(hadPay >= 2){
-				System.out.println("2€ back");
+				System.out.println("2 \u20ac back");
 				hadPay -= 2;
 			}
 			else if( hadPay >= 1){
-				System.out.println("1€ back");
+				System.out.println("1 \u20ac back");
 				hadPay -= 1;
 			}
 			else if( hadPay >= 0.5){
