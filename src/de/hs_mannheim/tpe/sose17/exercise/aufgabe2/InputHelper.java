@@ -23,6 +23,28 @@ final class InputHelper {
 		while (!success) {
 			try {
 				result = scanner.nextInt();
+				success = true;
+			} catch (InputMismatchException e) {
+				System.err.println("Wrong input. Try again.");
+			}
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Reads a float from the standard input stream.
+	 * 
+	 * @return
+	 */
+	public static float readFloat() {
+		float result = 0;
+		boolean success = false;
+		
+		while (!success) {
+			try {
+				result = scanner.nextFloat();
+				success = true;
 			} catch (InputMismatchException e) {
 				System.err.println("Wrong input. Try again.");
 			}
